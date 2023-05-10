@@ -11,6 +11,8 @@
       >
       <button (click)="pageForward()">Next</button>
     </div>
-    <app-book-data *ngFor="let book of bookList" [bookData]="book">
-    </app-book-data>
+    <section class="books-container">
+      <app-book-data *ngFor="let book of bookList" [bookData]="book">
+      </app-book-data>
+    </section>
 </section>
