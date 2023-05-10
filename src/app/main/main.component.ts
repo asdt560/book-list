@@ -18,6 +18,10 @@ export class MainComponent {
       this.bookList = data.results;
     });
   }
+  pageChange = (event : Event) => {
+    this.page = Number(event);
+    this.callBooks();
+  }
   pageForward = () => {
     this.page += 1;
     this.callBooks();

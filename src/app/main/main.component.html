@@ -2,7 +2,13 @@
     <h1>Book List</h1>
     <div>   
       <button (click)='pageBack()'>Prev</button>
-            {{page}}
+      <input
+        min="1" 
+        type="number"
+        aria-label="page"
+        value="{{page}}"
+        (change)="pageChange($any($event.target).value)"
+      >
       <button (click)="pageForward()">Next</button>
     </div>
     <app-book-data *ngFor="let book of bookList" [bookData]="book">
