@@ -12,9 +12,22 @@ export class MainComponent {
   bookList : Book[] = [];
   booksService: BooksService = inject(BooksService);
   page = 1
-  constructor() {
+
+  callBooks = () => {
     this.booksService.getBooks(this.page).then((data: Books) => {
       this.bookList = data.results;
     });
+  }
+  pageForward = () => {
+    this.page += 1;
+    this.callBooks();
+  }
+  pageBack = () => {
+    if(this.page === 1) return;
+    this.page -= 1;
+    this.callBooks();
+  }
+  constructor() {
+    this.callBooks();
   }
 }

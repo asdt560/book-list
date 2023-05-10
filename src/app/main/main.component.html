@@ -1,5 +1,10 @@
-<h1>Main</h1>
 <section>
+    <h1>Book List</h1>
+    <div>   
+      <button (click)='pageBack()'>Prev</button>
+            {{page}}
+      <button (click)="pageForward()">Next</button>
+    </div>
     <app-book-data *ngFor="let book of bookList" [bookData]="book">
     </app-book-data>
 </section>
