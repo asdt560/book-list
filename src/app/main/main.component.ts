@@ -14,8 +14,8 @@ export class MainComponent {
   page = 1
 
   callBooks = () => {
-    this.booksService.getBooks(this.page).then((data: Books) => {
-      this.bookList = data.results;
+    this.booksService.getBooks(this.page).then((data: Books | undefined) => {
+      this.bookList = data!.results;
     });
   }
   pageChange = (event : Event) => {
