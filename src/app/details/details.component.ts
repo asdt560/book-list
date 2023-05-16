@@ -17,6 +17,7 @@ export class DetailsComponent {
   constructor() {
     this.booksService.getBookByID(Number(this.route.snapshot.paramMap.get('id'))).then((data: Books) => {
       this.bookDetail = data.results[0];
+      console.log(this.bookDetail)
     });
   }
 
