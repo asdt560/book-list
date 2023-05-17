@@ -1,1 +1,9 @@
-<p>details works!</p>
+<div *ngIf="bookDetail">
+  <p>{{bookDetail!.title}}</p>
+  <p>{{bookDetail!.authors[0].name}}</p>
+  <ul>
+    <li *ngFor="let subject of bookDetail!.subjects">
+      {{subject}}
+    </li>
+  </ul>
+</div>
