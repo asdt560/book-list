@@ -1,6 +1,8 @@
 <div *ngIf="bookDetail">
   <p>{{bookDetail!.title}}</p>
-  <p>{{bookDetail!.authors[0].name}}</p>
+  <p *ngFor="let author of bookDetail!.authors">
+    {{author.name}}
+  </p>
   <ul>
     <li *ngFor="let subject of bookDetail!.subjects">
       {{subject}}
