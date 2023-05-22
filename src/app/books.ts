@@ -8,13 +8,7 @@ export interface Books {
 export interface Book {
     id: number;
     title: string;
-    authors: [
-      {
-        name: string;
-        birth_year: number;
-        death_year: number;
-      }
-    ];
+    authors: Person[];
     subjects: string[];
     bookshelves: string[];
     languages: string[];
@@ -24,4 +18,10 @@ export interface Book {
       [key: string]: string;
     };
     download_count: number;
+}
+
+interface Person {
+  birth_year: number | null,
+  death_year: number | null,
+  name: string
 }

@@ -1,0 +1,26 @@
+<div>
+  <p>Search By:</p>
+  <select 
+    title="Search parameter"
+    aria-label="Search parameter"
+    (change)="this.factor = $any($event.target).value"
+  >
+    <option value="topic">Topic</option>
+    <option value="ids">ID</option>
+    <option value="search">Title or Author Name</option>
+  </select>
+  <input 
+    type="text"
+    placeholder="Search term"
+    aria-label="Search term"
+    (change)="this.value = $any($event.target).value"
+  />
+  <button 
+    type="button"
+    (click)="search()"
+  >
+    Search
+  </button>
+  <app-book-data *ngFor="let book of bookList" [bookData]="book">
+  </app-book-data>
+</div>

@@ -5,14 +5,10 @@ import { Book, Books } from './books';
   providedIn: 'root'
 })
 export class BooksService {
-  url = 'https://gutendex.com/books/?page='
+  url = 'https://gutendex.com/books/?'
   constructor() { }
-  async getBooks(page : number): Promise<Books | undefined> {
-    const data = await fetch(`${this.url}${page}`);
-    return await data.json() ?? [];
-  }
-  async getBookByID(id : number): Promise<Books> {
-    const data = await fetch(`https://gutendex.com/books?ids=${id}`);
+  async getBooksByFactor(factor : string, value : string): Promise<Books> {
+    const data = await fetch(`${this.url}${factor}=${value}`);
     return await data.json() ?? [];
   }
 }

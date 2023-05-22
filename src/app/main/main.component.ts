@@ -14,7 +14,7 @@ export class MainComponent {
   page = 1
 
   callBooks = () => {
-    this.booksService.getBooks(this.page).then((data: Books | undefined) => {
+    this.booksService.getBooksByFactor('pages', `${this.page}`).then((data: Books | undefined) => {
       this.bookList = data!.results;
     });
   }
