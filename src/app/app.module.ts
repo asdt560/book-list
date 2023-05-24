@@ -7,6 +7,7 @@ import { MainComponent } from './main/main.component';
 import { BookDataComponent } from './book-data/book-data.component';
 import { DetailsComponent } from './details/details.component';
 import { SearchPageComponent } from './search-page/search-page.component';
+import { TruncatePipe } from './truncate.pipe';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SearchPageComponent } from './search-page/search-page.component';
     MainComponent,
     BookDataComponent,
     DetailsComponent,
-    SearchPageComponent
+    SearchPageComponent,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,
