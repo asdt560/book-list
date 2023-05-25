@@ -1,27 +1,137 @@
-# BookList
+# 📗 Table of Contents
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+  - [Deployment](#triangular_flag_on_post-deployment)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [📝 License](#license)
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# 📖 cash-tracker <a name="about-project"></a>
 
-## Code scaffolding
+**book-list** is an Angular frontend application which shows information about books in the Project Gutenberg database.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🛠 Built With <a name="built-with"></a>
 
-## Build
+### Tech Stack <a name="tech-stack"></a>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="https://angular.io/">Angular</a></li>
+  </ul>
+</details>
 
-## Running unit tests
+<!-- Features -->
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Key Features <a name="key-features"></a>
 
-## Running end-to-end tests
+- **Main page:** user may browse through pages of books.
+- **Detail:** shows information about selected book.
+- **Search** user may search for books according to multiple search criteria.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Further help
+## 🚀 Live Demo <a name="live-demo"></a>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+[Live Demo here.](https://asdt560.github.io/book-list/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+To get a local copy up and running, follow these steps.
+
+### Prerequisites
+
+In order to run this project you need: ``` node ´´´.
+
+### Setup
+
+Clone this repository to your desired folder.
+
+### Install
+
+Install this project with:
+
+```
+  npm install
+```
+
+### Usage
+
+To run the project, execute the following command:
+
+```
+  ng serve
+```
+
+### Run tests
+
+To run tests, run the following command:
+
+```
+  ng test
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 👥 Author <a name="authors"></a>
+
+👤 **Justo Rago**
+
+- GitHub: [@githubhandle](https://github.com/asdt560)
+- Twitter: [@twitterhandle](https://twitter.com/JustoRago)
+- LinkedIn: [LinkedIn]( www.linkedin.com/in/justo-rago-0714b5208)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **More information in the detail page**
+- [ ] **Download links for books**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+If you like this project please give it a star.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
