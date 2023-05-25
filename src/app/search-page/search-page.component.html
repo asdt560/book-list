@@ -1,15 +1,17 @@
-<div>
-  <p>Search By:</p>
+<div class="flex items-center justify-center">
+  <p class="text-amber-900">Search By:</p>
   <select 
     title="Search parameter"
     aria-label="Search parameter"
     (change)="this.factor = $any($event.target).value"
+    class="{{basicStyle}} active:bg-amber-400"
   >
     <option value="topic">Topic</option>
     <option value="ids">ID</option>
     <option value="search">Title or Author Name</option>
   </select>
-  <input 
+  <input
+    class="{{basicStyle}} active:bg-amber-400 placeholder:text-slate-500"
     type="text"
     placeholder="Search term"
     aria-label="Search term"
@@ -18,9 +20,15 @@
   <button 
     type="button"
     (click)="search()"
+    class="{{basicStyle}} hover:bg-amber-400"
   >
     Search
   </button>
-  <app-book-data *ngFor="let book of bookList" [bookData]="book">
-  </app-book-data>
+  <div class="flex flex-wrap justify-around">
+    <app-book-data 
+      class="w-1/5 h-32 {{basicStyle}} hover:bg-amber-400 m-3" 
+      *ngFor="let book of bookList" [bookData]="book"
+    >
+    </app-book-data>
+  </div>
 </div>

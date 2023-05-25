@@ -12,6 +12,8 @@ export class SearchPageComponent {
   booksService: BooksService = inject(BooksService);
   factor : string = 'topic';
   value : string = '';
+  basicStyle = "border-double border-4 border-amber-600 rounded-md m-3 p-1 bg-amber-100 text-amber-950";
+
 
   search = () => {
     this.booksService.getBooksByFactor(this.factor, this.value).then((data: Books | undefined) => {
