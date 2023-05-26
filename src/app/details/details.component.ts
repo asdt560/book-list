@@ -14,7 +14,7 @@ export class DetailsComponent {
   bookDetail! : Book;
   route : ActivatedRoute = inject(ActivatedRoute);
   id : string | null = this.route.snapshot.paramMap.get('id');
-  
+  listStyle: string = 'border-2 border-amber-500 border-double p-1'
   constructor() {
     this.booksService.getBooksByFactor('ids', `${this.id}`).then((data: Books) => {
       this.bookDetail = data.results[0];
