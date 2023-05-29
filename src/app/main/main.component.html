@@ -1,0 +1,19 @@
+<section>
+    <h1 class="text-6xl text-center text-amber-900">Book List</h1>
+    <div class="flex justify-center">   
+      <button (click)='pageBack()' class="{{basicStyle}} hover:bg-amber-400">Prev</button>
+      <input
+        class="{{basicStyle}} active:bg-amber-400"
+        min="1" 
+        type="number"
+        aria-label="page"
+        value="{{page}}"
+        (change)="pageChange($any($event.target).value)"
+      >
+      <button (click)="pageForward()" class="{{basicStyle}} hover:bg-amber-400">Next</button>
+    </div>
+    <section class="flex flex-wrap justify-around">
+      <app-book-data class="w-1/5 h-32 {{basicStyle}} hover:bg-amber-400 m-3" *ngFor="let book of bookList" [bookData]="book">
+      </app-book-data>
+    </section>
+</section>
