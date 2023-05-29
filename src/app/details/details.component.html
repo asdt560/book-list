@@ -21,10 +21,10 @@
   <figure class="p-4">
     <figcaption class="text-amber-950">Available Formats for Download:</figcaption>
     <ul>
-      <li *ngFor="let format of bookDetail!.formats |keyvalue; even as even; odd as odd" 
-          [ngClass]="[listStyle, (even ? 'bg-amber-700 text-amber-200' : 'bg-transparent text-amber-950'), 'hover:underline']"
+      <li *ngFor="let format of bookDetail!.formats |keyvalue; even as even;" 
+          [ngClass]="[listStyle, (even ? 'bg-amber-700 text-amber-200' : 'bg-transparent text-amber-950'), 'underline']"
       >
-        <a href="{{format.value}}">Download as: {{format.key}}</a>
+        <a class="hover:font-bold" href="{{format.value}}">Download as: {{format.key}}</a>
       </li>
     </ul>
   </figure>
