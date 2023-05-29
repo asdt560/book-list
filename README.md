@@ -39,7 +39,7 @@
 ### Key Features <a name="key-features"></a>
 
 - **Main page:** user may browse through pages of books.
-- **Detail:** shows information about selected book.
+- **Detail:** shows information about selected book. Has links for book download in a variety of formats.
 - **Search** user may search for books according to multiple search criteria.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -104,8 +104,7 @@ To run tests, run the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **More information in the detail page**
-- [ ] **Download links for books**
+- [ ] **Quick search by theme from the details page**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

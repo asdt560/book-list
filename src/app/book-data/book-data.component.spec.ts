@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BookDataComponent } from './book-data.component';
+import { TruncatePipe } from '../truncate.pipe';
 
 describe('BookDataComponent', () => {
   let component: BookDataComponent;
@@ -8,7 +9,7 @@ describe('BookDataComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [BookDataComponent]
+      declarations: [BookDataComponent, TruncatePipe]
     });
     fixture = TestBed.createComponent(BookDataComponent);
     component = fixture.componentInstance;
