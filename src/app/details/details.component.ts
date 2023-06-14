@@ -13,7 +13,7 @@ export class DetailsComponent {
   booksService: BooksService = inject(BooksService);
   bookDetail! : Book | null;
   route : ActivatedRoute = inject(ActivatedRoute);
-  id : number | null = Number(this.route.snapshot.paramMap.get('id'));
+  id : number = Number(this.route.snapshot.paramMap.get('id'));
   listStyle: string = 'border-2 border-amber-500 border-double p-1'
   
   constructor() {
