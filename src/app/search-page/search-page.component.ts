@@ -14,11 +14,10 @@ export class SearchPageComponent {
   route : ActivatedRoute = inject(ActivatedRoute);
   factor : string = this.route.snapshot.paramMap.get('type') || 'topic';
   value : string = this.route.snapshot.paramMap.get('value') || '';
-  go : string = this.route.snapshot.paramMap.get('go') || '';
   basicStyle = "border-double border-4 border-amber-600 rounded-md m-3 p-1 bg-amber-100 text-amber-950";
 
   constructor() {
-    if(this.go === 'true') {
+    if(this.value !== '') {
       this.search(this.factor, this.value);
     }
   }
