@@ -4,7 +4,7 @@
     <p class="text-amber-950">{{(bookDetail!.authors.length > 1) ? 'Author: ': 'Authors: '}}</p>
     <div class="flex justify-between w-5/6">
       <p class="text-center text-amber-900" *ngFor="let author of bookDetail!.authors">
-        <a [routerLink]="['/search', {type: 'search', value: author.name, go: true}]">{{author.name}}</a>
+        <a [routerLink]="['/search', {type: 'search', value: author.name}]">{{author.name}}</a>
       </p>
     </div>
   </div>
@@ -14,7 +14,7 @@
       <li *ngFor="let subject of bookDetail!.subjects; even as even; odd as odd" 
           [ngClass]="[listStyle, (even ? 'bg-amber-700 text-amber-200' : 'bg-transparent text-amber-950')]"
       >
-        <a [routerLink]="['/search', {type: 'topic', value: subject, go: true}]">{{subject}}</a>
+        <a [routerLink]="['/search', {type: 'topic', value: subject}]">{{subject}}</a>
       </li>
     </ul>
   </figure>
