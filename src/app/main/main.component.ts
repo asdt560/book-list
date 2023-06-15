@@ -10,13 +10,13 @@ import { Book } from '../books';
 })
 export class MainComponent {
   basicStyle = "border-double border-4 border-amber-600 rounded-md mx-1 my-2 md:m-3 p-1 bg-amber-100 text-amber-950";
-  bookList! : Books | null;
+  bookList : Book[] = [];
   booksService: BooksService = inject(BooksService);
   page = 1
 
   callBooks = () => {
     this.booksService.getBooks(`${this.page}`).then((data: Books) => {
-      this.bookList = data;
+      this.bookList = data.results;
     });
   }
   pageChange = (event : Event) => {
@@ -36,7 +36,7 @@ export class MainComponent {
     if(!this.booksService.state) {
       this.callBooks();
     } else {
-      this.bookList = this.booksService.state;
+      this.bookList = this.booksService.state.results;
     }
   }
 }
