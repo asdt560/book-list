@@ -1,4 +1,7 @@
-<a class="w-full h-full flex justify-center content-center items-center text-center" [routerLink]="['/details', bookData.id]">
+<a 
+  class="w-full h-full flex justify-center content-center items-center text-center"
+  [routerLink]="['/details', bookData.id]"
+>
   <p class="text-sm md:text-base lg:text-xl">{{bookData.title|truncate}}</p>
 </a>
 

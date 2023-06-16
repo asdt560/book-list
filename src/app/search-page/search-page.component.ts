@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Book, Books } from '../books';
 import { BooksService } from '../books.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-search-page',
@@ -10,13 +11,18 @@ import { BooksService } from '../books.service';
 export class SearchPageComponent {
   bookList : Book[] = [];
   booksService: BooksService = inject(BooksService);
-  factor : string = 'topic';
-  value : string = '';
+  route : ActivatedRoute = inject(ActivatedRoute);
+  factor : string = this.route.snapshot.paramMap.get('type') || 'topic';
+  value : string = this.route.snapshot.paramMap.get('value') || '';
   basicStyle = "border-double border-4 border-amber-600 rounded-md m-3 p-1 bg-amber-100 text-amber-950";
 
-
-  search = () => {
-    this.booksService.getBooksByFactor(this.factor, this.value).then((data: Books | undefined) => {
+  constructor() {
+    if(this.value !== '') {
+      this.search(this.factor, this.value);
+    }
+  }
+  search = (factor : string, value : string): void => {
+    this.booksService.getBooksByFactor(factor, value).then((data: Books | undefined) => {
       this.bookList = data!.results;
     });
   }

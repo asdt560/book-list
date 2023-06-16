@@ -15,28 +15,28 @@ export class MainComponent {
   page = 1
 
   callBooks = () => {
-    this.booksService.getBooksByFactor('page', `${this.page}`).then((data: Books | undefined) => {
-      console.log(data)
-      this.bookList = data!.results;
+    this.booksService.getBooks(`${this.page}`).then((data: Books) => {
+      this.bookList = data.results;
     });
   }
   pageChange = (event : Event) => {
     this.page = Number(event);
-    console.log(this.page);
     this.callBooks();
   }
   pageForward = () => {
     this.page += 1;
-    console.log(this.page);
     this.callBooks();
   }
   pageBack = () => {
     if(this.page === 1) return;
     this.page -= 1;
-    console.log(this.page);
     this.callBooks();
   }
   constructor() {
-    this.callBooks();
+    if(!this.booksService.state) {
+      this.callBooks();
+    } else {
+      this.bookList = this.booksService.state.results;
+    }
   }
 }
