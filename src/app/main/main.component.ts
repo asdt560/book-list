@@ -9,34 +9,34 @@ import { Book } from '../books';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent {
-  basicStyle = "border-double border-4 border-amber-600 rounded-md m-3 p-1 bg-amber-100 text-amber-950";
+  basicStyle = "border-double border-4 border-amber-600 rounded-md mx-1 my-2 md:m-3 p-1 bg-amber-100 text-amber-950";
   bookList : Book[] = [];
   booksService: BooksService = inject(BooksService);
   page = 1
 
   callBooks = () => {
-    this.booksService.getBooksByFactor('page', `${this.page}`).then((data: Books | undefined) => {
-      console.log(data)
-      this.bookList = data!.results;
+    this.booksService.getBooks(`${this.page}`).then((data: Books) => {
+      this.bookList = data.results;
     });
   }
   pageChange = (event : Event) => {
     this.page = Number(event);
-    console.log(this.page);
     this.callBooks();
   }
   pageForward = () => {
     this.page += 1;
-    console.log(this.page);
     this.callBooks();
   }
   pageBack = () => {
     if(this.page === 1) return;
     this.page -= 1;
-    console.log(this.page);
     this.callBooks();
   }
   constructor() {
-    this.callBooks();
+    if(!this.booksService.state) {
+      this.callBooks();
+    } else {
+      this.bookList = this.booksService.state.results;
+    }
   }
 }

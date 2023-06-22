@@ -9,6 +9,7 @@ export interface Book {
     id: number;
     title: string;
     authors: Person[];
+    translators: Person[];
     subjects: string[];
     bookshelves: string[];
     languages: string[];

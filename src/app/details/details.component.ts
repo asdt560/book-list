@@ -11,15 +11,13 @@ import { Book, Books } from '../books';
 })
 export class DetailsComponent {
   booksService: BooksService = inject(BooksService);
-  bookDetail! : Book;
+  bookDetail! : Book | null;
   route : ActivatedRoute = inject(ActivatedRoute);
-  id : string | null = this.route.snapshot.paramMap.get('id');
+  id : number = Number(this.route.snapshot.paramMap.get('id')) || this.booksService.state!.results[0].id;
   listStyle: string = 'border-2 border-amber-500 border-double p-1'
+  
   constructor() {
-    this.booksService.getBooksByFactor('ids', `${this.id}`).then((data: Books) => {
-      this.bookDetail = data.results[0];
-      console.log(this.bookDetail)
-    });
+    this.bookDetail = this.booksService.getSingleBook(this.id)
   }
-
+  
 }
